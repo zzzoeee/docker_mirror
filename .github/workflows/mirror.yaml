@@ -1,29 +1,28 @@
 on:
   workflow_dispatch:
     inputs:
-      IMAGE_NAME:
-        description: '原镜像名称'
+      IMAGE_NAME: # ${{ github.event.inputs.IMAGE_NAME }}
+        description: 'original image name'
         required: true
-        default: 'mysql/mysql-server'
-      NEW_NAME:
-        description: '同步后镜像名称'
-        required: true
-        default: 'mysql-server'
+        default: 'jenkins/jenkins'
+  push:
+    branches:
+      - main
+         
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      QYWX_ROBOT_URL: ${{ secrets.QYWX_ROBOT_URL }}
+      IMAGE_NAME: "jenkins/jenkins"
+      TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
+      TARGET_REPOSITORY: "waterfalls/jenkins"
+      IMAGE_VERSION: "latest"
+      ARCH: "arm64"
     steps:
-      - name: ls
-        run: |
-          ls -l
-          pwd
       - name: Login to Docker Registry
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
-
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
       - name: Pull, tag, and push Docker image
         run: |
-          docker pull --platform arm64 jenkins/jenkins:latest
-          # docker tag ${{ github.event.inputs.IMAGE_NAME }}:${{ github.event.inputs.IMAGE_VERSION }} ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.NEW_NAME }}:${{ github.event.inputs.IMAGE_VERSION }}
-          # docker push ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.NEW_NAME }}:${{ github.event.inputs.IMAGE_VERSION }}
+          docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_VERSION }}
+          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_VERSION }}
