@@ -16,8 +16,9 @@ jobs:
       QYWX_ROBOT_URL: ${{ secrets.QYWX_ROBOT_URL }}
     steps:
       - name: ls
-        run: ls
-             pwd
+        run: |
+          ls -l
+          pwd
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
 
