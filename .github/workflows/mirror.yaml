@@ -13,10 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "centos" ##
+      # docker pull IMAGE_NAME:IMAGE_TAG
+      IMAGE_NAME: "registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/centos" ##
-      IMAGE_TAG: "centos7" ##
+      TARGET_REPOSITORY: "waterfalls/ks-jenkins" ##
+      IMAGE_TAG: "v3.3.0-2.319.1" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
