@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
-      IMAGE_NAME: "registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins" ##
+      IMAGE_NAME: "kubespheredev/ks-jenkins" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/ks-jenkins" ##
       IMAGE_TAG: "v3.3.0-2.319.1" ##
