@@ -4,7 +4,7 @@ on:
       IMAGE_NAME: # ${{ github.event.inputs.IMAGE_NAME }}
         description: 'original image name'
         required: true
-        default: 'centos/centos7'
+        default: 'centos/centos7' ##
   push:
     branches:
       - main
@@ -15,14 +15,14 @@ jobs:
     env:
       IMAGE_NAME: "jenkins/jenkins"
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/jenkins"
-      IMAGE_VERSION: "latest"
+      TARGET_REPOSITORY: "waterfalls/centos" ##
+      IMAGE_TAG: "latest"
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
       - name: Pull, tag, and push Docker image
         run: |
-          docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
-          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_VERSION }}
-          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_VERSION }}
+          docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
