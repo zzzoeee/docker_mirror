@@ -4,7 +4,7 @@ on:
       IMAGE_NAME: # ${{ github.event.inputs.IMAGE_NAME }}
         description: 'original image name'
         required: true
-        default: 'centos/centos7' ##
+        default: 'centos/centos7' 
   push:
     branches:
       - main
@@ -13,10 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "jenkins/jenkins"
+      IMAGE_NAME: "centos/centos7" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/centos" ##
-      IMAGE_TAG: "latest"
+      IMAGE_TAG: "centos7" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
