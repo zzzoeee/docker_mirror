@@ -4,7 +4,7 @@ on:
       IMAGE_NAME: # ${{ github.event.inputs.IMAGE_NAME }}
         description: 'original image name'
         required: true
-        default: 'jenkins/jenkins'
+        default: 'centos/centos7'
   push:
     branches:
       - main
