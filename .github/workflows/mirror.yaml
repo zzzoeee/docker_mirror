@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "centos/centos7" ##
+      IMAGE_NAME: "centos" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/centos" ##
       IMAGE_TAG: "centos7" ##
