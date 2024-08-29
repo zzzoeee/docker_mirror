@@ -14,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
-      IMAGE_NAME: "kubespheredev/ks-jenkins" ##
+      # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
+      IMAGE_NAME: "registry.k8s.io/metrics-server/metrics-server" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/ks-jenkins" ##
-      IMAGE_TAG: "v3.3.0-2.319.1" ##
+      TARGET_REPOSITORY: "waterfalls/metrics-server" ##
+      IMAGE_TAG: "v0.7.2" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
