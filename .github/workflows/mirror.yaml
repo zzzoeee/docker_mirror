@@ -18,7 +18,7 @@ jobs:
       IMAGE_NAME: "nginx" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/nginx" ##
-      IMAGE_TAG: "stable" ##
+      IMAGE_TAG: "stable-perl" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
