@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "nginx" ##
+      IMAGE_NAME: "calico/node" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/nginx" ##
-      IMAGE_TAG: "stable-perl" ##
+      TARGET_REPOSITORY: "waterfalls/calico-node" ##
+      IMAGE_TAG: "v3.27.0" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
