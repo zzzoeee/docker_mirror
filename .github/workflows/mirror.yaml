@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "kubesphere/builder-maven" ##
+      IMAGE_NAME: "golang" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/builder-maven" ##
-      IMAGE_TAG: "v3.2.0" ##
+      TARGET_REPOSITORY: "waterfalls/golang" ##
+      IMAGE_TAG: "1.22.0-alpine3.19" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
