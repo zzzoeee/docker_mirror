@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "golang" ##
+      IMAGE_NAME: "alpine" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/golang" ##
-      IMAGE_TAG: "1.22.0-alpine3.19" ##
+      TARGET_REPOSITORY: "waterfalls/alpine" ##
+      IMAGE_TAG: "3.19" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
@@ -27,4 +27,4 @@ jobs:
         run: |
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
-          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}         
