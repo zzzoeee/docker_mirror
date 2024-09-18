@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "registry.k8s.io/prometheus-adapter/prometheus-adapter" ##
+      IMAGE_NAME: "registry.k8s.io/kube-state-metrics/kube-state-metrics" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/prometheus-adapter" ##
-      IMAGE_TAG: "v0.12.0" ##
+      TARGET_REPOSITORY: "waterfalls/kube-state-metrics" ##
+      IMAGE_TAG: "v2.13.0" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
