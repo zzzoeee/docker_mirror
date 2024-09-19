@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "registry.k8s.io/kube-state-metrics/kube-state-metrics" ##
+      IMAGE_NAME: "enmotech/opengauss" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/kube-state-metrics" ##
-      IMAGE_TAG: "v2.13.0" ##
+      TARGET_REPOSITORY: "waterfalls/opengauss" ##
+      IMAGE_TAG: "5.0.3" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
