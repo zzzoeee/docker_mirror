@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "openebs/linux-utils" ##
+      IMAGE_NAME: "redis" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/openebs_linux-utils" ##
-      IMAGE_TAG: "3.5.0" ##
+      TARGET_REPOSITORY: "waterfalls/redis" ##
+      IMAGE_TAG: "6.2.14" ##
       ARCH: "arm64"
     steps:
       - name: Login to Docker Registry
