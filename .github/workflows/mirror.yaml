@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "gitea/gitea" ##
+      IMAGE_NAME: "kubesphere/kube-rbac-proxy" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/gitea" ##
-      IMAGE_TAG: "nightly" ##
-      ARCH: "amd64" ## arm64
+      TARGET_REPOSITORY: "waterfalls/kube-rbac-proxy" ##
+      IMAGE_TAG: "v0.11.0" ##
+      ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
