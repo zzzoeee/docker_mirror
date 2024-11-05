@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "kubesphere/kube-rbac-proxy" ##
+      IMAGE_NAME: "prom/node-exporter" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/kube-rbac-proxy" ##
-      IMAGE_TAG: "v0.11.0" ##
+      TARGET_REPOSITORY: "waterfalls/node-exporter" ##
+      IMAGE_TAG: "v1.3.1" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
