@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "prom/node-exporter" ##
+      IMAGE_NAME: "python" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/node-exporter" ##
-      IMAGE_TAG: "v1.3.1" ##
+      TARGET_REPOSITORY: "waterfalls/python" ##
+      IMAGE_TAG: "3.9.20" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
