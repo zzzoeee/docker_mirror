@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "kubesphere/ks-installer" ##
+      IMAGE_NAME: "prometheus-operator" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/ks-installer" ##
-      IMAGE_TAG: "v3.3.1" ##
+      TARGET_REPOSITORY: "waterfalls/prometheus-operator" ##
+      IMAGE_TAG: "kubesphere.v0.55.1" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
