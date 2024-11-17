@@ -15,10 +15,10 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "python" ##
+      IMAGE_NAME: "kubesphere/ks-installer" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/python" ##
-      IMAGE_TAG: "3.9.20" ##
+      IMAGE_TAG: "v3.3.1" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
