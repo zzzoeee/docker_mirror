@@ -15,7 +15,7 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "kubesphereio/devops-apiserver" ##
+      IMAGE_NAME: "kubesphere/devops-apiserver" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/linux-utils" ##
       IMAGE_TAG: "v3.3.1" ##
