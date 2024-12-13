@@ -17,7 +17,7 @@ jobs:
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
       IMAGE_NAME: "kubesphere/devops-apiserver" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/linux-utils" ##
+      TARGET_REPOSITORY: "waterfalls/devops-apiserver" ##
       IMAGE_TAG: "v3.3.1" ##
       # TARGET_IMAGE_TAG: "kubesphere.v0.55.1"
       ARCH: "arm64" ## amd64 arm64
