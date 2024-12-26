@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "grafana/grafana" ##
+      IMAGE_NAME: "starrocks/artifacts-centos7" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/grafana" ##
-      IMAGE_TAG: "11.2.0" ##
-      TARGET_IMAGE_TAG: "11.2.0-amd64"
+      TARGET_REPOSITORY: "waterfalls/starrocks" ##
+      IMAGE_TAG: "3.3.7" ##
+      TARGET_IMAGE_TAG: "3.3.7-amd64"
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
