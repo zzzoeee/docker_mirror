@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "danielqsj/kafka-exporter" ##
+      IMAGE_NAME: "jenkins/jenkins" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/kafka-exporter" ##
-      IMAGE_TAG: "v1.8.0" ##
-      TARGET_IMAGE_TAG: "v1.8.0"
+      TARGET_REPOSITORY: "waterfalls/jenkins" ##
+      IMAGE_TAG: "2.479.3-lts" ##
+      TARGET_IMAGE_TAG: "2.479.3-lts"
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
