@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "jenkins/jenkins" ##
+      IMAGE_NAME: "apache/hadoop" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/jenkins" ##
-      IMAGE_TAG: "2.479.3-lts" ##
-      TARGET_IMAGE_TAG: "2.479.3-lts"
+      TARGET_REPOSITORY: "waterfalls/hadoop" ##
+      IMAGE_TAG: "3.4.1" ##
+      TARGET_IMAGE_TAG: "3.4.1"
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
