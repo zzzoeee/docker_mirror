@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
-      # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG
-      IMAGE_NAME: "flink" ##
+      # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
+      IMAGE_NAME: "metrics-server" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/flink" ##
-      IMAGE_TAG: "1.17.0-java11" ##
-      TARGET_IMAGE_TAG: "1.17.0-java11" ##
-      ARCH: "arm64" ## amd64 arm64
+      TARGET_REPOSITORY: "waterfalls/metrics-server" ##
+      IMAGE_TAG: "v0.7.2" ##
+      TARGET_IMAGE_TAG: "v0.7.2-amd64" ##
+      ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
@@ -28,4 +28,4 @@ jobs:
         run: |
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
-          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}            
+          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}        
