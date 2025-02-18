@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "metrics-server" ##
+      IMAGE_NAME: "bitnami/metrics-server" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/metrics-server" ##
-      IMAGE_TAG: "v0.7.2" ##
-      TARGET_IMAGE_TAG: "v0.7.2-amd64" ##
+      IMAGE_TAG: "0.7.2" ##
+      TARGET_IMAGE_TAG: "0.7.2" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
