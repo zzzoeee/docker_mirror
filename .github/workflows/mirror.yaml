@@ -29,10 +29,3 @@ jobs:
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
           docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}        
-
-
-H:  
-cd .\docker_mirror
-git add .
-git commit -m "add an image"
-git push origin main     
