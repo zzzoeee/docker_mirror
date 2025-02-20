@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "openebs/linux-utils" ##
+      IMAGE_NAME: "prom/blackbox-exporter" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/linux-utils" ##
-      IMAGE_TAG: "3.5.0" ##
-      TARGET_IMAGE_TAG: "3.5.0-amd64" ##
+      TARGET_REPOSITORY: "waterfalls/blackbox-exporter" ##
+      IMAGE_TAG: "v0.25.0" ##
+      TARGET_IMAGE_TAG: "v0.25.0-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
@@ -29,3 +29,10 @@ jobs:
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
           docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}        
+
+
+H:  
+cd .\docker_mirror
+git add .
+git commit -m "add an image"
+git push origin main     
