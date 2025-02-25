@@ -18,8 +18,8 @@ jobs:
       IMAGE_NAME: "bitnami/postgresql" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
       TARGET_REPOSITORY: "waterfalls/postgresql" ##
-      IMAGE_TAG: "16.6.0" ##
-      TARGET_IMAGE_TAG: "16.6.0-amd64" ##
+      IMAGE_TAG: "8.0.35" ##
+      TARGET_IMAGE_TAG: "8.0.35-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
@@ -28,4 +28,4 @@ jobs:
         run: |
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
-          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}        
+          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
