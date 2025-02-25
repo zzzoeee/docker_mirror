@@ -15,9 +15,9 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "bitnami/postgresql" ##
+      IMAGE_NAME: "mysql" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/postgresql" ##
+      TARGET_REPOSITORY: "waterfalls/mysql" ##
       IMAGE_TAG: "8.0.35" ##
       TARGET_IMAGE_TAG: "8.0.35-amd64" ##
       ARCH: "amd64" ## amd64 arm64
