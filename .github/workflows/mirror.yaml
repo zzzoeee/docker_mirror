@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "prom/alertmanager" ##
+      IMAGE_NAME: "prom/node-exporter" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/alertmanager" ##
-      IMAGE_TAG: "v0.23.0" ##
-      TARGET_IMAGE_TAG: "v0.23.0-amd64" ##
+      TARGET_REPOSITORY: "waterfalls/node-exporter" ##
+      IMAGE_TAG: "v1.3.1" ##
+      TARGET_IMAGE_TAG: "v1.3.1-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
