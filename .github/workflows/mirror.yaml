@@ -15,12 +15,12 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "nvidia/cuda" ##
+      IMAGE_NAME: "python" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/cuda" ##
-      IMAGE_TAG: "12.8.1-runtime-ubuntu24.04" ##
-      TARGET_IMAGE_TAG: "12.8.1-runtime-ubuntu24.04-amd64" ##
-      ARCH: "amd64" ## amd64 arm64
+      TARGET_REPOSITORY: "waterfalls/python" ##
+      IMAGE_TAG: "3.12-slim" ##
+      TARGET_IMAGE_TAG: "3.12-slim" ##
+      ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
