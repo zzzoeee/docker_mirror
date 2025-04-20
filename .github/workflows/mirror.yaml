@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "mysql" ##
+      IMAGE_NAME: "node" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/mysql" ##
-      IMAGE_TAG: "5.7.44" ##
-      TARGET_IMAGE_TAG: "5.7.44-amd64" ##
+      TARGET_REPOSITORY: "waterfalls/node" ##
+      IMAGE_TAG: "18.18.2" ##
+      TARGET_IMAGE_TAG: "18.18.2-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
