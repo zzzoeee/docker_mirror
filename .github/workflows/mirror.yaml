@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "node" ##
+      IMAGE_NAME: "calico/typha" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
-      TARGET_REPOSITORY: "waterfalls/node" ##
-      IMAGE_TAG: "18.18.2" ##
-      TARGET_IMAGE_TAG: "18.18.2-amd64" ##
+      TARGET_REPOSITORY: "typha" ##
+      IMAGE_TAG: "v3.29.3-13-gfc2b67170234" ##
+      TARGET_IMAGE_TAG: "v3.29.3-13-gfc2b67170234-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
