@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "redis" ##
+      IMAGE_NAME: "minio" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "redis" ##
-      IMAGE_TAG: "6.2.14" ##
-      TARGET_IMAGE_TAG: "6.2.14-amd64" ##
+      TARGET_REPOSITORY: "minio" ##
+      IMAGE_TAG: "RELEASE.2023-10-16T04-13-43Z" ##
+      TARGET_IMAGE_TAG: "RELEASE.2023-10-16T04-13-43Z-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
