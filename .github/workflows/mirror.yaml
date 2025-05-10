@@ -18,8 +18,8 @@ jobs:
       IMAGE_NAME: "node" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
       TARGET_REPOSITORY: "node" ##
-      IMAGE_TAG: "18.16.0" ##
-      TARGET_IMAGE_TAG: "18.16.0-amd64" ##
+      IMAGE_TAG: "16.14.2" ##
+      TARGET_IMAGE_TAG: "16.14.2-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
