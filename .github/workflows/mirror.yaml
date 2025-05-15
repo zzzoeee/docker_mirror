@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "node" ##
+      IMAGE_NAME: "jenkins/inbound-agent" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "node" ##
-      IMAGE_TAG: "16.14.2" ##
-      TARGET_IMAGE_TAG: "16.14.2-amd64" ##
+      TARGET_REPOSITORY: "jenkins_inbound-agent" ##
+      IMAGE_TAG: "latest-jdk17" ##
+      TARGET_IMAGE_TAG: "latest-jdk17-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
