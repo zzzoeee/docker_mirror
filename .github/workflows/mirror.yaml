@@ -18,8 +18,8 @@ jobs:
       IMAGE_NAME: "danielqsj/kafka-exporter" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
       TARGET_REPOSITORY: "kafka-exporter" ##
-      IMAGE_TAG: "v1.9.0" ##
-      TARGET_IMAGE_TAG: "v1.9.0-amd64" ##
+      IMAGE_TAG: "v1.8.0" ##
+      TARGET_IMAGE_TAG: "v1.8.0-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
