@@ -17,7 +17,7 @@ jobs:
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
       IMAGE_NAME: "amazoncorretto" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "kafka-exporter" ##
+      TARGET_REPOSITORY: "amazoncorretto" ##
       IMAGE_TAG: "17.0.15-al2023" ##
       TARGET_IMAGE_TAG: "17.0.15-al2023-amd64" ##
       ARCH: "amd64" ## amd64 arm64
