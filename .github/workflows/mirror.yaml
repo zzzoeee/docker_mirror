@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "amazoncorretto" ##
+      IMAGE_NAME: "polinux/stress" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "amazoncorretto" ##
-      IMAGE_TAG: "17.0.15-al2023" ##
-      TARGET_IMAGE_TAG: "17.0.15-al2023-amd64" ##
+      TARGET_REPOSITORY: "stress" ##
+      IMAGE_TAG: "latest" ##
+      TARGET_IMAGE_TAG: "latest-amd64" ##
       ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
