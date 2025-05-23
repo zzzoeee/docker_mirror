@@ -20,7 +20,7 @@ jobs:
       TARGET_REPOSITORY: "stress" ##
       IMAGE_TAG: "latest" ##
       TARGET_IMAGE_TAG: "latest" ##
-      ARCH: "arm64" ## amd64 arm64
+      ARCH: "arm64" ### amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
