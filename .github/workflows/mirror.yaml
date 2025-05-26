@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "openebs/node-disk-exporter" ##
+      IMAGE_NAME: "openebs/provisioner-localpv" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "openebs_node-disk-exporter" ##
-      IMAGE_TAG: "2.1.0" ##
-      TARGET_IMAGE_TAG: "2.1.0" ##
+      TARGET_REPOSITORY: "openebs_provisioner-localpv" ##
+      IMAGE_TAG: "3.4.0" ##
+      TARGET_IMAGE_TAG: "3.4.0" ##
       ARCH: "amd64" ### amd64 arm64
     steps:
       - name: Login to Docker Registry
