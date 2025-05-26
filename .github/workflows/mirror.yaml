@@ -19,8 +19,8 @@ jobs:
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
       TARGET_REPOSITORY: "openebs_provisioner-localpv" ##
       IMAGE_TAG: "3.4.0" ##
-      TARGET_IMAGE_TAG: "3.4.0-amd64" ##
-      ARCH: "amd64" ### amd64 arm64
+      TARGET_IMAGE_TAG: "3.4.0" ##
+      ARCH: "arm64" ### amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
