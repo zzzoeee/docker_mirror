@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "polinux/stress" ##
+      IMAGE_NAME: "mongo" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "stress" ##
-      IMAGE_TAG: "latest" ##
-      TARGET_IMAGE_TAG: "latest" ##
+      TARGET_REPOSITORY: "mongo" ##
+      IMAGE_TAG: "3.6.11" ##
+      TARGET_IMAGE_TAG: "3.6.11" ##
       ARCH: "arm64" ### amd64 arm64
     steps:
       - name: Login to Docker Registry
