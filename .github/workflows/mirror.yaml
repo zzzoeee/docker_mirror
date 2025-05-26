@@ -15,12 +15,12 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "mongo" ##
+      IMAGE_NAME: "openebs/node-disk-manager" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "mongo" ##
-      IMAGE_TAG: "3.6.11" ##
-      TARGET_IMAGE_TAG: "3.6.11" ##
-      ARCH: "arm64" ### amd64 arm64
+      TARGET_REPOSITORY: "openebs_node-disk-manager" ##
+      IMAGE_TAG: "2.1.0" ##
+      TARGET_IMAGE_TAG: "2.1.0" ##
+      ARCH: "amd64" ### amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
