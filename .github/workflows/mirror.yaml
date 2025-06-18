@@ -15,9 +15,9 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "calico/typha" ##
+      IMAGE_NAME: "calico/node" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "typha" ##
+      TARGET_REPOSITORY: "calico-node" ##
       IMAGE_TAG: "release-v3.29" ##
       TARGET_IMAGE_TAG: "release-v3.29" ##
       ARCH: "arm64" ### amd64 arm64
