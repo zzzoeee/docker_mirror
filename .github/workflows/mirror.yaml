@@ -18,8 +18,8 @@ jobs:
       IMAGE_NAME: "calico/typha" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
       TARGET_REPOSITORY: "typha" ##
-      IMAGE_TAG: "release-v3.30" ##
-      TARGET_IMAGE_TAG: "release-v3.30" ##
+      IMAGE_TAG: "release-v3.29" ##
+      TARGET_IMAGE_TAG: "release-v3.29" ##
       ARCH: "arm64" ### amd64 arm64
     steps:
       - name: Login to Docker Registry
