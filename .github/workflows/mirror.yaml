@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "golang" ##
+      IMAGE_NAME: "gcr.io/distroless/static" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "golang" ##
-      IMAGE_TAG: "1.24" ##
-      TARGET_IMAGE_TAG: "1.24" ##
+      TARGET_REPOSITORY: "distroless-static" ##
+      IMAGE_TAG: "nonroot" ##
+      TARGET_IMAGE_TAG: "nonroot" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
