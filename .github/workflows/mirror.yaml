@@ -15,12 +15,12 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "gcr.io/distroless/static" ##
+      IMAGE_NAME: "python" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "distroless-static" ##
-      IMAGE_TAG: "nonroot" ##
-      TARGET_IMAGE_TAG: "nonroot" ##
-      ARCH: "arm64" ## amd64 arm64
+      TARGET_REPOSITORY: "python" ##
+      IMAGE_TAG: "3.8-alpine" ##
+      TARGET_IMAGE_TAG: "3.8-alpine" ##
+      ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
