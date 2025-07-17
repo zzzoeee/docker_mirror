@@ -15,12 +15,12 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "python" ##
+      IMAGE_NAME: "openeuler/wrk" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "python" ##
-      IMAGE_TAG: "3.8-alpine" ##
-      TARGET_IMAGE_TAG: "3.8-alpine" ##
-      ARCH: "amd64" ## amd64 arm64
+      TARGET_REPOSITORY: "wrk" ##
+      IMAGE_TAG: "4.2.0-oe2403sp1" ##
+      TARGET_IMAGE_TAG: "4.2.0-oe2403sp1-arm64" ##
+      ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
