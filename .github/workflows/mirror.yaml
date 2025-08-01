@@ -18,9 +18,9 @@ jobs:
       IMAGE_NAME: "goharbor/prepare" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
       TARGET_REPOSITORY: "goharbor_prepare" ##
-      IMAGE_TAG: "v2.13.1" ##
+      IMAGE_TAG: "v2.13.2" ##
       TARGET_IMAGE_TAG: "v2.13.1-amd64" ##
-      ARCH: "v2.13.1" ## amd64 arm64
+      ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
