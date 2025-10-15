@@ -18,8 +18,8 @@ jobs:
       IMAGE_NAME: "golang" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
       TARGET_REPOSITORY: "golang" ##
-      IMAGE_TAG: "1.24.6" ##
-      TARGET_IMAGE_TAG: "1.24.6" ##
+      IMAGE_TAG: "1.24-alpine" ##
+      TARGET_IMAGE_TAG: "1.24-alpine" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
