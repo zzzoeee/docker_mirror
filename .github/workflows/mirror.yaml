@@ -15,12 +15,12 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "golang" ##
+      IMAGE_NAME: "centos" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "golang" ##
-      IMAGE_TAG: "1.24-alpine" ##
-      TARGET_IMAGE_TAG: "1.24-alpine" ##
-      ARCH: "arm64" ## amd64 arm64
+      TARGET_REPOSITORY: "centos" ##
+      IMAGE_TAG: "centos7.9.2009" ##
+      TARGET_IMAGE_TAG: "centos7.9.2009" ##
+      ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
