@@ -15,11 +15,11 @@ jobs:
     env:
       # docker pull IMAGE_NAME:IMAGE_TAG
       # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
-      IMAGE_NAME: "elastic/filebeat" ##
+      IMAGE_NAME: "python" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
-      TARGET_REPOSITORY: "filebeat" ##
-      IMAGE_TAG: "8.19.9" ##
-      TARGET_IMAGE_TAG: "8.19.9" ##
+      TARGET_REPOSITORY: "python" ##
+      IMAGE_TAG: "3.7-alpine" ##
+      TARGET_IMAGE_TAG: "3.7-alpine" ##
       ARCH: "arm64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
