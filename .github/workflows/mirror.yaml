@@ -15,7 +15,7 @@ jobs:
     env:
       IMAGE_NAME: "nginx/nginx-prometheus-exporter" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
-      ARCH: "amd64"
+      ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
       #ARCH: "amd64"
       IMAGE_TAG: "1.5.1" ##
