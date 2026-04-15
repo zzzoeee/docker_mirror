@@ -13,19 +13,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # docker pull IMAGE_NAME:IMAGE_TAG
-      # docker push TARGET_REGISTRY/TARGET_REPOSITORY:IMAGE_TAG # TARGET_REPOSITORY will be created automatically
       IMAGE_NAME: "bitnami/mysqld-exporter" ##
-      TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls"
+      TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
+      ARCH: "arm64"
+      #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
+      #ARCH: "amd64"
       TARGET_REPOSITORY: "mysqld-exporter" ##
       IMAGE_TAG: "latest" ##
-      TARGET_IMAGE_TAG: "latest-amd64" ##
-      ARCH: "amd64" ## amd64 arm64
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
       - name: Pull, tag, and push Docker image
         run: |
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
-          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.TARGET_IMAGE_TAG }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
