@@ -13,18 +13,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "bitnami/mysqld-exporter" ##
+      IMAGE_NAME: "nginx/nginx-prometheus-exporter" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
-      ARCH: "arm64"
+      ARCH: "amd64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
       #ARCH: "amd64"
-      TARGET_REPOSITORY: "mysqld-exporter" ##
-      IMAGE_TAG: "latest" ##
+      IMAGE_TAG: "1.5.1" ##
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
       - name: Pull, tag, and push Docker image
         run: |
+          TARGET_REPOSITORY="${IMAGE_NAME##*/}"
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
-          docker push ${{ env.TARGET_REGISTRY }}/${{ env.TARGET_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${{ env.IMAGE_TAG }}
+          docker push ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${{ env.IMAGE_TAG }}
