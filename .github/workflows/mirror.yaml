@@ -13,12 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "python" ##
+      IMAGE_NAME: "rancher/rancher" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
       #ARCH: "amd64"
-      IMAGE_TAG: "3.12.9-slim" ##
+      IMAGE_TAG: "v2.14-head" ##
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
