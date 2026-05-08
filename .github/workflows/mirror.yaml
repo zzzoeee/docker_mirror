@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "rancher/mirrored-bci-micro" ##
+      IMAGE_NAME: "rancher/shell" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
