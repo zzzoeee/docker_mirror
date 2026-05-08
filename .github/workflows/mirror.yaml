@@ -13,12 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "rancher/mirrored-bci-micro" ##
+      IMAGE_NAME: "rancher/shell" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
       #ARCH: "amd64"
-      IMAGE_TAG: "15.6.24.2" ##
+      IMAGE_TAG: "v0.7.0" ##
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
