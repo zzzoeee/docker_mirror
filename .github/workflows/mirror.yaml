@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "rancher/shell" ##
+      IMAGE_NAME: "rancher/mirrored-bci-micro" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
@@ -24,7 +24,12 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
       - name: Pull, tag, and push Docker image
         run: |
-          TARGET_REPOSITORY="${IMAGE_NAME##*/}"
+          if [[ "${{ env.IMAGE_NAME }}" == */* ]]; then
+            TARGET_REPOSITORY=$(echo "${{ env.IMAGE_NAME }}" | tr '/' '-')
+          else
+            TARGET_REPOSITORY="${{ env.IMAGE_NAME }}"
+          fi
+          
           docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${{ env.IMAGE_TAG }}
           docker push ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${{ env.IMAGE_TAG }}
