@@ -13,24 +13,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: "rancher/turtles" ##
+      IMAGE: "rancher/rancher-webhook:v0.10.1-rc.5" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
       #ARCH: "amd64"
-      IMAGE_TAG: "v0.26.1" ##
       # H:; cd .\docker_mirror; git add .; git commit -m "add an image"; git push origin main
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
       - name: Pull, tag, and push Docker image
         run: |
-          if [[ "${{ env.IMAGE_NAME }}" == */* ]]; then
-            TARGET_REPOSITORY=$(echo "${{ env.IMAGE_NAME }}" | tr '/' '-')
+          # Extract image name and tag from the IMAGE variable
+          IMAGE_NAME=$(echo "${{ env.IMAGE }}" | cut -d: -f1)
+          IMAGE_TAG=$(echo "${{ env.IMAGE }}" | cut -d: -f2)
+          
+          if [[ "$IMAGE_NAME" == */* ]]; then
+            TARGET_REPOSITORY=$(echo "$IMAGE_NAME" | tr '/' '-')
           else
-            TARGET_REPOSITORY="${{ env.IMAGE_NAME }}"
+            TARGET_REPOSITORY="$IMAGE_NAME"
           fi
           
-          docker pull --platform ${{ env.ARCH }} ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-          docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${{ env.IMAGE_TAG }}
-          docker push ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${{ env.IMAGE_TAG }}
+          docker pull --platform ${{ env.ARCH }} ${IMAGE_NAME}:${IMAGE_TAG}
+          docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${IMAGE_TAG}
+          docker push ${{ env.TARGET_REGISTRY }}/${TARGET_REPOSITORY}:${IMAGE_TAG}
