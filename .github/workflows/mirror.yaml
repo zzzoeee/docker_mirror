@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE: "node:23.11.0-alpine" ##
+      IMAGE: "$image" ##
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
       #TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade"
