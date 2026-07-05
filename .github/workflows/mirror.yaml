@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE: "golang:1.24.4-alpine"
+      IMAGE: "golang:1.26.0-alpine3.23"
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
       ARCH: "arm64"
     steps:
