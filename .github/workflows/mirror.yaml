@@ -13,9 +13,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE: "golang:1.26.0-alpine3.23"
-      TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/waterfalls" 
-      ARCH: "arm64"
+      IMAGE: "redpandadata/console:v3.8.0"
+      TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade" 
+      ARCH: "amd64"
     steps:
       - name: Login to Docker Registry
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ env.TARGET_REGISTRY }}
