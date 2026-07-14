@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE: "node:24.14.0-slim"
+      IMAGE: "nginx:alpine-perl"
       TARGET_REGISTRY: "registry.cn-hangzhou.aliyuncs.com/schokolade" 
       ARCH: "amd64"
     steps:
